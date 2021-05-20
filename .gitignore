@@ -1,0 +1,14 @@
+**/target/
+**/.project
+**/.classpath
+**/.settings/
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+*.log
+/*.xlsx
+
+*.flattened-pom.xml
