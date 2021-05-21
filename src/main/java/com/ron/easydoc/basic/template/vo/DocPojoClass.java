@@ -4,10 +4,10 @@ import com.google.common.collect.Lists;
 import com.ron.easydoc.basic.element.Class;
 import com.ron.easydoc.basic.parse.Parse;
 import com.ron.easydoc.basic.parse.ParseHelper;
-import com.ron.easydoc.basic.utils.CollectionUtils;
-import com.ron.easydoc.basic.utils.StringUtils;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
+import org.apache.commons.lang3.StringUtils;
+import org.springframework.util.CollectionUtils;
 
 import com.ron.easydoc.basic.element.*;
 

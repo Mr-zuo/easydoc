@@ -1,10 +1,10 @@
 package com.ron.easydoc.basic.element;
 
 
-import com.ron.easydoc.basic.utils.CollectionUtils;
-import com.ron.easydoc.basic.utils.StringUtils;
 import lombok.Getter;
 import lombok.Setter;
+import org.apache.commons.lang3.StringUtils;
+import org.springframework.util.CollectionUtils;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -37,7 +37,7 @@ public class Comment {
     private void parseTagsMetaData(){
         if(!CollectionUtils.isEmpty(tags)){
             for(Tag tag:tags){
-                if(StringUtils.isNotEmpty(tag.getContent())){
+                if(StringUtils.isNotBlank(tag.getContent())){
                     tag.setContent(parseMetaData(tag.getMetaData(), tag.getContent()));
                 }
             }

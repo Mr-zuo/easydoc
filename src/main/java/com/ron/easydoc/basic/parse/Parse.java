@@ -11,11 +11,12 @@ import com.ron.easydoc.basic.config.GenConfig;
 import com.ron.easydoc.basic.element.*;
 
 import com.ron.easydoc.basic.element.Class;
-import com.ron.easydoc.basic.utils.CollectionUtils;
 import com.ron.easydoc.basic.utils.FileUtils;
-import com.ron.easydoc.basic.utils.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.springframework.util.CollectionUtils;
+
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -71,7 +72,6 @@ public class Parse {
         if (cacheCls != null) {
             return cacheCls;
         }
-
 
         //完全限定名的话就直接解析
         if (genericType.contains(".")) {
@@ -133,7 +133,6 @@ public class Parse {
         }
 
         logger.warn("class: "+fullyName+" not found in sourceRoot list!");
-
         return null;
     }
 

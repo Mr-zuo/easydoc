@@ -10,10 +10,10 @@ import com.ron.easydoc.basic.template.TemplateParse;
 import com.ron.easydoc.basic.template.vo.DocApiApiClass;
 import com.ron.easydoc.basic.template.vo.rpc.RpcApiConvertHelper;
 import com.ron.easydoc.basic.template.vo.spring.SpringConvertHelper;
-import com.ron.easydoc.basic.utils.CollectionUtils;
 import com.ron.easydoc.basic.utils.FileUtils;
 import com.ron.easydoc.basic.utils.IOUtils;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.util.CollectionUtils;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -217,7 +217,4 @@ public class GenDoc {
             log.error("parsing failure!", e);
         }
     }
-
-
-
 }

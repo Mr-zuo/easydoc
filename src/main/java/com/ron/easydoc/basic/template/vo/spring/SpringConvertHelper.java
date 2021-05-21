@@ -5,7 +5,8 @@ import com.ron.easydoc.basic.element.Annotation;
 import com.ron.easydoc.basic.element.Class;
 import com.ron.easydoc.basic.element.Method;
 import com.ron.easydoc.basic.template.vo.DocApiMethod;
-import com.ron.easydoc.basic.utils.CollectionUtils;
+
+import org.springframework.util.CollectionUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,7 +42,7 @@ public class SpringConvertHelper {
         if(!CollectionUtils.isEmpty(cls.getMethods())){
 
             for(Method method:cls.getMethods()){
-                if(method.isPublic() && isSpringAction(method)){
+                if(method.isNotPrivate() && isSpringAction(method)){
                     methodList.add(new SpringMvcMethod(method));
                 }
             }

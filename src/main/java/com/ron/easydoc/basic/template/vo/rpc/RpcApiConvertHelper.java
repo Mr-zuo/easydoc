@@ -5,7 +5,8 @@ package com.ron.easydoc.basic.template.vo.rpc;
 import com.ron.easydoc.basic.element.Class;
 import com.ron.easydoc.basic.element.Method;
 import com.ron.easydoc.basic.template.vo.DocApiMethod;
-import com.ron.easydoc.basic.utils.CollectionUtils;
+
+import org.springframework.util.CollectionUtils;
 
 import java.util.ArrayList;
 import java.util.List;

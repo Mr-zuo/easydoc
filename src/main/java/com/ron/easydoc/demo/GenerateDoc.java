@@ -9,33 +9,13 @@ import lombok.extern.slf4j.Slf4j;
 
 /**
  * @author ron
- * @date 2021年05月13日 17:41
+ * @date 2021年05月13日
  */
 @Slf4j
 public class GenerateDoc {
 
     public static void main(String[] args) {
-//        log.info("start");
-//        genDoc(); //生成文档，
         execute("F:\\ron\\workspace\\private\\easydoc","F:\\ron\\workspace\\private\\easydoc");
-    }
-
-    private static void startWeb(){
-        new GenDocWebApp(new GenWebConfig()).start();
-    }
-
-    /**
-     * 生成文档
-     * 根据自己项目的情况去配置
-     */
-    private static void genDoc(){
-        GenConfig genConfig = new GenConfig();
-        genConfig.setApiScanCommentTag(Lists.newArrayList("apiNote"));
-        genConfig.setSourcePath("F:\\ron\\workspace\\private\\ron-api");
-        genConfig.setOutputPath("F:\\ron\\workspace\\private\\ron-api");
-        genConfig.setWebType(GenConfig.WebType.SPRING_MVC);
-        genConfig.setOutPutType(GenConfig.OutPutType.RPC_HTML);
-        GenDoc.gen(genConfig);
     }
 
     public static void execute(String sourcePath, String outPutPath){

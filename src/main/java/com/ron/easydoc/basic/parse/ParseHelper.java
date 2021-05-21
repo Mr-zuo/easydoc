@@ -42,6 +42,7 @@ public class ParseHelper {
                 "boolean",
                 "Byte",
                 "byte",
+                "BigDecimal",
                 "Object"
     );
 

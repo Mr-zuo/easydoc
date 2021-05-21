@@ -60,24 +60,24 @@ public enum BasicTypeEnum {
 
     public static BasicTypeEnum fromCode(String code) {
         return Arrays.stream(BasicTypeEnum.values()).filter(x -> x.getCode().equals(code)).findFirst()
-                .orElseThrow(() -> new IllegalArgumentException(String.format("illegal item type: %s", code)));
+                .orElseThrow(() -> new IllegalArgumentException(String.format("illegal data type: %s", code)));
     }
 
     public static BasicTypeEnum fromName(String name) {
         return Arrays.stream(BasicTypeEnum.values()).filter(x -> x.getName().equals(name)).findFirst()
-                .orElseThrow(() -> new IllegalArgumentException(String.format("illegal item type: %s", name)));
+                .orElseThrow(() -> new IllegalArgumentException(String.format("illegal data type: %s", name)));
     }
 
     public static String toName(String code) {
         return Arrays.stream(BasicTypeEnum.values()).filter(x -> x.getCode().equals(code))
                 .findFirst().map(BasicTypeEnum::getName)
-                .orElseThrow(() -> new IllegalArgumentException(String.format("illegal item type: %s", code)));
+                .orElseThrow(() -> new IllegalArgumentException(String.format("illegal data type: %s", code)));
     }
 
     public static String toCode(String name) {
         return Arrays.stream(BasicTypeEnum.values()).filter(x -> x.getName().equals(name))
                 .findFirst().map(BasicTypeEnum::getCode)
-                .orElseThrow(() -> new IllegalArgumentException(String.format("illegal item type: %s", name)));
+                .orElseThrow(() -> new IllegalArgumentException(String.format("illegal data type: %s", name)));
     }
 
     public static List<String> getCodes() {

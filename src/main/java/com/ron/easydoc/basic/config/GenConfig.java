@@ -1,11 +1,11 @@
 package com.ron.easydoc.basic.config;
 
-import com.ron.easydoc.basic.utils.CollectionUtils;
 import com.ron.easydoc.basic.utils.FileUtils;
-import com.ron.easydoc.basic.utils.StringUtils;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.StringUtils;
+import org.springframework.util.CollectionUtils;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -69,8 +69,9 @@ public class GenConfig {
     //输出文档类型
     public static enum OutPutType{
         HTML,
-        RPC_HTML,    //对应controller接口
-        SERVICE_HTML,//对应service 接口
+        CONTROLLER_HTML,    //对应controller接口
+        SERVICE_HTML,       //对应service接口
+        RPC_HTML,           //对应rpc接口
         MARKDOWN,
         WORD;
 

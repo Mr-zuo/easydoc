@@ -5,7 +5,7 @@ import com.ron.easydoc.basic.element.Comment;
 import com.ron.easydoc.basic.element.Class;
 import com.ron.easydoc.basic.element.Member;
 import com.ron.easydoc.basic.parse.Parse;
-import com.ron.easydoc.basic.utils.CollectionUtils;
+import org.springside.modules.utils.collection.MapUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,7 +20,7 @@ public class DocParseHelp {
         if(tag != null){
             List<DocPojoClass> docPojoClassList = new ArrayList<DocPojoClass>();
 
-            if(!CollectionUtils.isEmpty(tag.getMetaData()) && tag.getMetaData().containsKey("type")){
+            if(MapUtil.isNotEmpty(tag.getMetaData()) && tag.getMetaData().containsKey("type")){
                 String[] paramTypes = tag.getMetaData().get("type").split(",");
 
                 for(String paramType:paramTypes){
@@ -29,7 +29,6 @@ public class DocParseHelp {
                         docPojoClassList.add(new DocPojoClass(paramClass));
                     }
                 }
-
                 return docPojoClassList;
             }
         }

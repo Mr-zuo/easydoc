@@ -2,10 +2,11 @@ package com.ron.easydoc.basic.element;
 
 
 import com.ron.easydoc.basic.config.GenConfig;
-import com.ron.easydoc.basic.utils.CollectionUtils;
-import com.ron.easydoc.basic.utils.StringUtils;
 import lombok.Getter;
 import lombok.Setter;
+import org.apache.commons.lang3.StringUtils;
+import org.springframework.util.CollectionUtils;
+
 
 import java.util.List;
 
@@ -77,7 +78,10 @@ public class Member {
 
     public boolean isPublic() {
         return !CollectionUtils.isEmpty(modifier) && modifier.contains("public");
+    }
 
+    public boolean isNotPrivate() {
+        return CollectionUtils.isEmpty(modifier) || !modifier.contains("private");
     }
 
     public Annotation getAnnotationByName(String name){
