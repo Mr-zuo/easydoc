@@ -43,6 +43,7 @@ public class ParseHelper {
                 "Byte",
                 "byte",
                 "BigDecimal",
+                "Date",
                 "Object"
     );
 

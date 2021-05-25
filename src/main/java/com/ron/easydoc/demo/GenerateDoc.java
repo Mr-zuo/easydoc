@@ -3,8 +3,6 @@ package com.ron.easydoc.demo;
 import com.google.common.collect.Lists;
 import com.ron.easydoc.basic.GenDoc;
 import com.ron.easydoc.basic.config.GenConfig;
-import com.ron.easydoc.basic.config.GenDocWebApp;
-import com.ron.easydoc.basic.config.GenWebConfig;
 import lombok.extern.slf4j.Slf4j;
 
 /**
