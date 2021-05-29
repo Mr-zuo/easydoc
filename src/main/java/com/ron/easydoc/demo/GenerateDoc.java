@@ -13,7 +13,7 @@ import lombok.extern.slf4j.Slf4j;
 public class GenerateDoc {
 
     public static void main(String[] args) {
-        execute("F:\\ron\\workspace\\private\\easydoc","F:\\ron\\workspace\\private\\easydoc");
+        execute("/Users/ron/workspace/easydoc","/Users/ron/workspace/easydoc");
     }
 
     public static void execute(String sourcePath, String outPutPath){
