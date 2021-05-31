@@ -42,7 +42,8 @@ public class SpringConvertHelper {
         if(!CollectionUtils.isEmpty(cls.getMethods())){
 
             for(Method method:cls.getMethods()){
-                if(method.isNotPrivate() && isSpringAction(method)){
+//                if(method.isNotPrivate() && isSpringAction(method)){
+                if(method.isNotPrivate()){
                     methodList.add(new SpringMvcMethod(method));
                 }
             }

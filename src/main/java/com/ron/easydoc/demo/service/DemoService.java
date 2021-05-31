@@ -1,7 +1,5 @@
 package com.ron.easydoc.demo.service;
 
-import com.ron.easydoc.annotation.DocApi;
-import com.ron.easydoc.annotation.DocMethod;
 import com.ron.easydoc.demo.domain.Item;
 
 /**
@@ -9,7 +7,6 @@ import com.ron.easydoc.demo.domain.Item;
  * @author ron
  * @date 2021年05月13日 14:53
  */
-@DocApi
 public interface DemoService {
 
     /**
@@ -18,7 +15,6 @@ public interface DemoService {
      * @param name  商品名称
      * @return 商品实体
      */
-    @DocMethod
     Item getItem(String code, String name);
 
 
@@ -28,7 +24,6 @@ public interface DemoService {
      * @param item
      * @return #type:com.ron.easydoc.demo.domain.Item#
      */
-    @DocMethod
     Item createItem(Item item);
 
     /**
@@ -36,14 +31,12 @@ public interface DemoService {
      * @param code 商品编码
      * @return 商品名称
      */
-    @DocMethod
     String getNameByCode(String code);
 
     /**
      * 获取商品数量
      * @return 商品数量
      */
-    @DocMethod
     int getItemNum();
 
     /**
@@ -51,7 +44,6 @@ public interface DemoService {
      * @param code 商品编码
      * @return 是否存在
      */
-    @DocMethod
     Boolean itemExist(String code);
 
     /**
