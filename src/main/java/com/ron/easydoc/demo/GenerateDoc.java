@@ -13,18 +13,18 @@ import lombok.extern.slf4j.Slf4j;
 public class GenerateDoc {
 
     public static void main(String[] args) {
-        execute("F:\\ron\\workspace\\private\\easydoc","F:\\ron\\workspace\\private\\easydoc");
+        execute("F:\\ron\\workspace\\private\\easydoc","F:\\ron\\workspace\\private\\easydoc","service","Service.java");
     }
 
-    public static void execute(String sourcePath, String outPutPath){
+    public static void execute(String sourcePath, String outPutPath,String targetPath,String suffix){
         GenConfig genConfig = new GenConfig();
         genConfig.setApiScanCommentTag(Lists.newArrayList("apiNote"));
         genConfig.setSourcePath(sourcePath);
         genConfig.setOutputPath(outPutPath);
         genConfig.setWebType(GenConfig.WebType.SPRING_MVC);
         genConfig.setOutPutType(GenConfig.OutPutType.SERVICE_HTML);
-        genConfig.setTargetPath("service");
-        genConfig.setSuffix("Service.java");
+        genConfig.setTargetPath(targetPath);
+        genConfig.setSuffix(suffix);
         GenDoc.gen(genConfig);
     }
 }

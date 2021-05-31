@@ -21,7 +21,7 @@ public interface DemoService {
     //参数返回值无法通过智能查询找到时，可以通过注释指定 #tyep:...#
     /**
      * 创建商品
-     * @param item
+     * @param item 商品实体
      * @return #type:com.ron.easydoc.demo.domain.Item#
      */
     Item createItem(Item item);

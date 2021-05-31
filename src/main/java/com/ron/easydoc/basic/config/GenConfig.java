@@ -43,7 +43,7 @@ public class GenConfig {
 
     private WebType webType = WebType.SPRING_MVC;
 
-    private OutPutType outPutType = OutPutType.HTML;
+    private OutPutType outPutType = OutPutType.SERVICE_HTML;
 
 
     public static GenConfig getGenConfig(){
