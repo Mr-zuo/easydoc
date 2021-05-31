@@ -13,7 +13,7 @@ import lombok.extern.slf4j.Slf4j;
 public class GenerateDoc {
 
     public static void main(String[] args) {
-        execute("/Users/ron/workspace/easydoc","/Users/ron/workspace/easydoc");
+        execute("F:\\ron\\workspace\\private\\easydoc","F:\\ron\\workspace\\private\\easydoc");
     }
 
     public static void execute(String sourcePath, String outPutPath){
@@ -23,6 +23,8 @@ public class GenerateDoc {
         genConfig.setOutputPath(outPutPath);
         genConfig.setWebType(GenConfig.WebType.SPRING_MVC);
         genConfig.setOutPutType(GenConfig.OutPutType.SERVICE_HTML);
+        genConfig.setTargetPath("service");
+        genConfig.setSuffix("Service.java");
         GenDoc.gen(genConfig);
     }
 }

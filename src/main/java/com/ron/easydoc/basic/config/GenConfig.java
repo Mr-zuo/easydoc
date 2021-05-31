@@ -36,6 +36,10 @@ public class GenConfig {
     private List<String> apiScanPackage;
 
     private String outputPath;
+    
+    private String targetPath = "service";
+
+    private String suffix = "Service.java";
 
     private WebType webType = WebType.SPRING_MVC;
 

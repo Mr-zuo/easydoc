@@ -13,7 +13,9 @@ import com.ron.easydoc.basic.template.vo.spring.SpringConvertHelper;
 import com.ron.easydoc.basic.utils.FileUtils;
 import com.ron.easydoc.basic.utils.IOUtils;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.util.CollectionUtils;
+import org.springside.modules.utils.collection.ListUtil;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -73,6 +75,12 @@ public class GenDoc {
         String outPutPath = genConfig.getOutputPath();
         log.info("【genDoc】api文件输出路径配置 outPutPath:" + outPutPath);
 
+        final String targetPath = genConfig.getTargetPath();
+        log.info("【genDoc】指定服务接口所在package targetPath:" + targetPath);
+
+        final String suffix = genConfig.getSuffix();
+        log.info("【genDoc】指定服务接口文件后缀 suffix:" + suffix);
+
         List<DocApiApiClass> docClassList = new ArrayList<DocApiApiClass>();
 
         log.info("【genDoc】解析开始！");
@@ -80,7 +88,10 @@ public class GenDoc {
         for(String path:sourcePathRoot){
             List<String> fileList = FileUtils.getJavaFileList(path);
             //并行解析
-            fileList.stream().filter(o->o.contains("service")).forEach((filePath)->{
+            fileList.stream()
+                    .filter(o->o.contains(targetPath))//筛选所在package
+                    .filter(o->o.endsWith(suffix))//筛选package内符合条件的文件
+                    .forEach((filePath)->{
                 Class cls;
                 try {
                     cls = Parse.parse(new FileInputStream(filePath), genConfig);
@@ -102,6 +113,7 @@ public class GenDoc {
             });
         }
         log.info("【genDoc】 一共解析出" + docClassList.size() + "个api文件，耗时:" + stopwatch.elapsed(TimeUnit.MILLISECONDS) + "毫秒");
+        if (ListUtil.isEmpty(docClassList)) return;
 
         if(GenConfig.OutPutType.HTML.equals(genConfig.getOutPutType()) ||
                 GenConfig.OutPutType.RPC_HTML.equals(genConfig.getOutPutType()) || GenConfig.OutPutType.SERVICE_HTML.equals(genConfig.getOutPutType())){
