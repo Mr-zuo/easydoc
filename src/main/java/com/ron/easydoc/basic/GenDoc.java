@@ -203,7 +203,7 @@ public class GenDoc {
                 html = TemplateParse.parseTemplate("html/index.ftl", mapData);
             } else if (genConfig.getOutPutType().equals(GenConfig.OutPutType.RPC_HTML)) {
                 html = TemplateParse.parseTemplate("html/rpc.ftl", mapData);
-            }else{
+            }else if (genConfig.getOutPutType().equals(GenConfig.OutPutType.SERVICE_HTML)) {
                 html = TemplateParse.parseTemplate("html/service.ftl", mapData);
             }
 

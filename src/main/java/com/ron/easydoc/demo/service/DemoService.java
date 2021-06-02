@@ -3,7 +3,7 @@ package com.ron.easydoc.demo.service;
 import com.ron.easydoc.demo.domain.Item;
 
 /**
- * demo服务接口
+ * demo服务api接口
  * @author ron
  * @date 2021年05月13日 14:53
  */
