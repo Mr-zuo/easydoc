@@ -13,7 +13,6 @@ import com.ron.easydoc.basic.template.vo.spring.SpringConvertHelper;
 import com.ron.easydoc.basic.utils.FileUtils;
 import com.ron.easydoc.basic.utils.IOUtils;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.lang3.StringUtils;
 import org.springframework.util.CollectionUtils;
 import org.springside.modules.utils.collection.ListUtil;
 
@@ -85,7 +84,7 @@ public class GenDoc {
         final String suffix = genConfig.getSuffix();
         log.info("【genDoc】指定服务接口文件后缀 suffix:" + suffix);
 
-        List<DocApiApiClass> docClassList = new ArrayList<DocApiApiClass>();
+        List<DocApiApiClass> docClassList = new ArrayList<>();
 
         log.info("【genDoc】解析开始！");
         //扫描解析
@@ -199,7 +198,7 @@ public class GenDoc {
     private  void genHtml(List<DocApiApiClass> docClassList, String outPutPath){
         try {
             Stopwatch stopwatch = Stopwatch.createStarted();
-            Map<String, Object> mapData = new HashMap<String, Object>();
+            Map<String, Object> mapData = new HashMap<>();
             mapData.put("jsonData", JSON.toJSONString(docClassList));
             mapData.put("classList", docClassList);
             String html = "";
