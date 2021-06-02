@@ -61,6 +61,10 @@ public class GenDoc {
     }
 
     public void gen(){
+        //genConfig默认是service配置，如果是controller要配置
+        if ("controller".equals(genConfig.getTargetPath())){
+            genConfig.setOutPutType(GenConfig.OutPutType.RPC_HTML);
+        }
         Stopwatch stopwatch  = Stopwatch.createStarted();
         log.info("【genDoc】校验配置！");
         if(!genConfig.validate()){

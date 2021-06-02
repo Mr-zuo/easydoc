@@ -15,7 +15,7 @@ public class DemoController {
     //参数返回值无法通过智能查询找到时，可以通过注释指定 #tyep:...#
     /**
      * 创建商品
-     * @param item
+     * @param item 商品实体
      * @return #type:com.ron.easydoc.demo.domain.Item#
      */
     @PostMapping("createItem")
@@ -28,15 +28,15 @@ public class DemoController {
      * @param code 商品code
      * @return 是否成功
      */
-    @GetMapping("deleteItem/{code}")
+    @DeleteMapping("deleteItem/{code}")
     public boolean deleteItem(@PathVariable(name="code") long code){
         return false;
     }
 
     /**
      * 获取商品
-     * @param code
-     * @param name
+     * @param code 商品code
+     * @param name 商品name
      * @return 商品实体
      */
     @RequestMapping(value = "getItem",method = RequestMethod.GET)

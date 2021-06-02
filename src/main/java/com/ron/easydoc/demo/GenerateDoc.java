@@ -13,8 +13,8 @@ import lombok.extern.slf4j.Slf4j;
 public class GenerateDoc {
 
     public static void main(String[] args) {
-//        execute("F:\\ron\\workspace\\private\\easydoc","F:\\ron\\workspace\\private\\easydoc","service","Service.java");
-        execute("F:\\ron\\workspace\\private\\easydoc","F:\\ron\\workspace\\private\\easydoc","controller","Controller.java");
+        execute("F:\\ron\\workspace\\private\\easydoc","F:\\ron\\workspace\\private\\easydoc","service","Service.java");
+//        execute("F:\\ron\\workspace\\private\\easydoc","F:\\ron\\workspace\\private\\easydoc","controller","Controller.java");
     }
 
     public static void execute(String sourcePath, String outPutPath,String targetPath,String suffix){
@@ -24,14 +24,8 @@ public class GenerateDoc {
         genConfig.setOutputPath(outPutPath);
 //        genConfig.setWebType(GenConfig.WebType.SPRING_MVC);
 //        genConfig.setOutPutType(GenConfig.OutPutType.SERVICE_HTML);
-//        genConfig.setTargetPath(targetPath);
-//        genConfig.setSuffix(suffix);
-        //genConfig默认是service配置，如果是controller要配置
-        if ("controller".equals(targetPath)){
-            genConfig.setOutPutType(GenConfig.OutPutType.RPC_HTML);
-            genConfig.setTargetPath(targetPath);
-            genConfig.setSuffix(suffix);
-        }
+        genConfig.setTargetPath(targetPath);
+        genConfig.setSuffix(suffix);
         GenDoc.gen(genConfig);
     }
 }
