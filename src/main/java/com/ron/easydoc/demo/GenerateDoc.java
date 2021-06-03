@@ -24,7 +24,7 @@ public class GenerateDoc {
         genConfig.setOutputPath(outPutPath);
 //        genConfig.setWebType(GenConfig.WebType.SPRING_MVC);
 //        genConfig.setOutPutType(GenConfig.OutPutType.SERVICE_HTML);
-        genConfig.setTargetPath(targetPath);
+        genConfig.setTargetPackage(targetPath);
         genConfig.setSuffix(suffix);
         GenDoc.gen(genConfig);
     }

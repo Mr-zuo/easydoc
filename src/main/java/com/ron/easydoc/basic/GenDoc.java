@@ -60,7 +60,7 @@ public class GenDoc {
 
     public void gen(){
         //genConfig默认是service配置，如果是controller要配置
-        if ("controller".equals(genConfig.getTargetPath())){
+        if ("controller".equals(genConfig.getTargetPackage())){
             genConfig.setOutPutType(GenConfig.OutPutType.RPC_HTML);
         }
         Stopwatch stopwatch  = Stopwatch.createStarted();
@@ -77,8 +77,8 @@ public class GenDoc {
         String outPutPath = genConfig.getOutputPath();
         log.info("【genDoc】api文件输出路径配置 outPutPath:" + outPutPath);
 
-        final String targetPath = genConfig.getTargetPath();
-        log.info("【genDoc】指定服务接口所在package targetPath:" + targetPath);
+        final String targetPackage = genConfig.getTargetPackage();
+        log.info("【genDoc】指定服务接口所在 package:" + targetPackage);
 
         final String suffix = genConfig.getSuffix();
         log.info("【genDoc】指定服务接口文件后缀 suffix:" + suffix);
@@ -91,7 +91,7 @@ public class GenDoc {
             List<String> fileList = FileUtils.getJavaFileList(path);
             //并行解析
             fileList.stream()
-                    .filter(o->o.contains(targetPath))//筛选所在package
+                    .filter(o->o.contains(targetPackage))//筛选所在package
                     .filter(o->o.endsWith(suffix))//筛选package内符合条件的文件
                     .forEach((filePath)->{
                 Class cls;

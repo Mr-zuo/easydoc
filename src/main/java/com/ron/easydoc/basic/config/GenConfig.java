@@ -37,7 +37,7 @@ public class GenConfig {
 
     private String outputPath;
     
-    private String targetPath = "service";
+    private String targetPackage = "service";
 
     private String suffix = "Service.java";
 
