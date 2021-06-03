@@ -14,7 +14,6 @@ import com.ron.easydoc.basic.utils.FileUtils;
 import com.ron.easydoc.basic.utils.IOUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.util.CollectionUtils;
-import org.springside.modules.utils.collection.ListUtil;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -116,7 +115,7 @@ public class GenDoc {
             });
         }
         log.info("【genDoc】 一共解析出" + docClassList.size() + "个api文件，耗时:" + stopwatch.elapsed(TimeUnit.MILLISECONDS) + "毫秒");
-        if (ListUtil.isEmpty(docClassList)) return;
+        if (CollectionUtils.isEmpty(docClassList)) return;
 
         if(GenConfig.OutPutType.HTML.equals(genConfig.getOutPutType()) ||
                 GenConfig.OutPutType.RPC_HTML.equals(genConfig.getOutPutType()) || GenConfig.OutPutType.SERVICE_HTML.equals(genConfig.getOutPutType())){

@@ -4,7 +4,7 @@ package com.ron.easydoc.basic.element;
 import com.ron.easydoc.basic.config.GenConfig;
 import lombok.Getter;
 import lombok.Setter;
-import org.apache.commons.lang3.StringUtils;
+import com.ron.easydoc.basic.utils.StringUtils;
 import org.springframework.util.CollectionUtils;
 
 

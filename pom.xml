@@ -66,11 +66,6 @@
             <artifactId>lombok</artifactId>
             <version>1.18.4</version>
         </dependency>
-        <dependency>
-            <groupId>io.springside</groupId>
-            <artifactId>springside-utils</artifactId>
-            <version>5.0.0-RC1</version>
-        </dependency>
     </dependencies>
 
     <build>

@@ -12,7 +12,7 @@ import com.ron.easydoc.basic.element.*;
 
 import com.ron.easydoc.basic.element.Class;
 import com.ron.easydoc.basic.utils.FileUtils;
-import org.apache.commons.lang3.StringUtils;
+import com.ron.easydoc.basic.utils.StringUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.util.CollectionUtils;

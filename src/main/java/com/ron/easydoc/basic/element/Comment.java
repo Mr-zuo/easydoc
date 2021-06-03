@@ -3,7 +3,7 @@ package com.ron.easydoc.basic.element;
 
 import lombok.Getter;
 import lombok.Setter;
-import org.apache.commons.lang3.StringUtils;
+import com.ron.easydoc.basic.utils.StringUtils;
 import org.springframework.util.CollectionUtils;
 
 import java.util.ArrayList;
@@ -37,7 +37,7 @@ public class Comment {
     private void parseTagsMetaData(){
         if(!CollectionUtils.isEmpty(tags)){
             for(Tag tag:tags){
-                if(StringUtils.isNotBlank(tag.getContent())){
+                if(StringUtils.isNotEmpty(tag.getContent())){
                     tag.setContent(parseMetaData(tag.getMetaData(), tag.getContent()));
                 }
             }

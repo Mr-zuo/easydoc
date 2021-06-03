@@ -6,7 +6,7 @@ import com.ron.easydoc.basic.parse.Parse;
 import com.ron.easydoc.basic.parse.ParseHelper;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
-import org.apache.commons.lang3.StringUtils;
+import com.ron.easydoc.basic.utils.StringUtils;
 import org.springframework.util.CollectionUtils;
 
 import com.ron.easydoc.basic.element.*;

@@ -7,7 +7,7 @@ import com.ron.easydoc.basic.template.vo.DocParseHelp;
 import com.ron.easydoc.basic.template.vo.DocPojoClass;
 import com.ron.easydoc.basic.template.vo.DocRequestParam;
 
-import org.apache.commons.lang3.StringUtils;
+import com.ron.easydoc.basic.utils.StringUtils;
 import org.springframework.util.CollectionUtils;
 
 import java.util.ArrayList;

@@ -3,7 +3,7 @@ package com.ron.easydoc.basic.template.vo.spring;
 import com.ron.easydoc.basic.element.*;
 import com.ron.easydoc.basic.template.vo.DocApiMember;
 
-import org.apache.commons.lang3.StringUtils;
+import com.ron.easydoc.basic.utils.StringUtils;
 import org.springframework.util.CollectionUtils;
 
 import java.util.List;
