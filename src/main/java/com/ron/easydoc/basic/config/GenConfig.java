@@ -75,7 +75,7 @@ public class GenConfig {
         HTML,
         CONTROLLER_HTML,    //对应controller接口
         SERVICE_HTML,       //对应service接口
-        RPC_HTML,           //对应rpc接口
+//        RPC_HTML,           //对应rpc接口
         MARKDOWN,
         WORD;
 

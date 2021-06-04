@@ -61,7 +61,7 @@ public class GenDoc {
     public void gen(){
         //genConfig默认是service配置，如果是controller要配置
         if ("controller".equals(genConfig.getTargetPackage())){
-            genConfig.setOutPutType(GenConfig.OutPutType.RPC_HTML);
+            genConfig.setOutPutType(GenConfig.OutPutType.CONTROLLER_HTML);
         }
         Stopwatch stopwatch  = Stopwatch.createStarted();
         log.info("【genDoc】校验配置！");
@@ -118,7 +118,7 @@ public class GenDoc {
         if (CollectionUtils.isEmpty(docClassList)) return;
 
         if(GenConfig.OutPutType.HTML.equals(genConfig.getOutPutType()) ||
-                GenConfig.OutPutType.RPC_HTML.equals(genConfig.getOutPutType()) || GenConfig.OutPutType.SERVICE_HTML.equals(genConfig.getOutPutType())){
+                GenConfig.OutPutType.CONTROLLER_HTML.equals(genConfig.getOutPutType()) || GenConfig.OutPutType.SERVICE_HTML.equals(genConfig.getOutPutType())){
             log.info("【genDoc】 开始生成html文档");
             genHtml(docClassList, outPutPath);
         }
@@ -203,7 +203,7 @@ public class GenDoc {
             String html = "";
             if (genConfig.getOutPutType().equals(GenConfig.OutPutType.HTML)) {
                 html = TemplateParse.parseTemplate("html/index.ftl", mapData);
-            } else if (genConfig.getOutPutType().equals(GenConfig.OutPutType.RPC_HTML)) {
+            } else if (genConfig.getOutPutType().equals(GenConfig.OutPutType.CONTROLLER_HTML)) {
                 html = TemplateParse.parseTemplate("html/rpc.ftl", mapData);
             }else if (genConfig.getOutPutType().equals(GenConfig.OutPutType.SERVICE_HTML)) {
                 html = TemplateParse.parseTemplate("html/service.ftl", mapData);
