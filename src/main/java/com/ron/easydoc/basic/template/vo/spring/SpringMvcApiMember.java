@@ -154,6 +154,14 @@ public abstract class SpringMvcApiMember implements DocApiMember {
             annotation = member.getAnnotationByName("PostMapping");
         }
 
+        if (annotation == null) {
+            annotation = member.getAnnotationByName("PutMapping");
+        }
+
+        if (annotation == null) {
+            annotation = member.getAnnotationByName("DeleteMapping");
+        }
+
         String path = "";
         if(annotation != null){
             if(annotation instanceof SingleAnnotation){
