@@ -13,10 +13,10 @@ import lombok.extern.slf4j.Slf4j;
 public class GenerateDoc {
 
     public static void main(String[] args) {
-//        execute("F:\\ron\\workspace\\private\\easydoc","F:\\ron\\workspace\\private\\easydoc","service","Service.java");
+        execute("E:\\workSpace\\private\\easydoc","E:\\workSpace\\private\\easydoc","service","Service.java");
 //        execute("F:\\ron\\workspace\\private\\easydoc","F:\\ron\\workspace\\private\\easydoc","controller","Controller.java");
 //        execute("/Users/ron/workspace/easydoc","/Users/ron/workspace/easydoc","service","Service.java");
-        execute("/Users/ron/workspace/easydoc","/Users/ron/workspace/easydoc","controller","Controller.java");
+//        execute("/Users/ron/workspace/easydoc","/Users/ron/workspace/easydoc","controller","Controller.java");
     }
 
     public static void execute(String sourcePath, String outPutPath,String targetPackage,String suffix){
