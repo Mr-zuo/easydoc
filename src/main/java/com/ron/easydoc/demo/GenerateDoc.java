@@ -13,13 +13,13 @@ import lombok.extern.slf4j.Slf4j;
 public class GenerateDoc {
 
     public static void main(String[] args) {
-        execute("E:\\workSpace\\private\\easydoc","E:\\workSpace\\private\\easydoc","service","Service.java");
-//        execute("F:\\ron\\workspace\\private\\easydoc","F:\\ron\\workspace\\private\\easydoc","controller","Controller.java");
+//        execute("/Users/10020093/ron/workspace/private/easydoc","/Users/10020093/ron/workspace/private/easydoc","service","Service.java");
+        execute("/Users/10020093/ron/workspace/private/easydoc","/Users/10020093/ron/workspace/private/easydoc","controller",".java","DemoController");
 //        execute("/Users/ron/workspace/easydoc","/Users/ron/workspace/easydoc","service","Service.java");
 //        execute("/Users/ron/workspace/easydoc","/Users/ron/workspace/easydoc","controller","Controller.java");
     }
 
-    public static void execute(String sourcePath, String outPutPath,String targetPackage,String suffix){
+    public static void execute(String sourcePath, String outPutPath,String targetPackage,String suffix,String specifiedFileName){
         GenConfig genConfig = new GenConfig();
         genConfig.setApiScanCommentTag(Lists.newArrayList("apiNote"));
         genConfig.setSourcePath(sourcePath);
@@ -28,6 +28,7 @@ public class GenerateDoc {
 //        genConfig.setOutPutType(GenConfig.OutPutType.SERVICE_HTML);
         genConfig.setTargetPackage(targetPackage);
         genConfig.setSuffix(suffix);
+        genConfig.setSpecifiedFileName(specifiedFileName);
         GenDoc.gen(genConfig);
     }
 }

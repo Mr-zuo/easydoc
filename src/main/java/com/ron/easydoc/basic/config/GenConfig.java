@@ -41,6 +41,8 @@ public class GenConfig {
 
     private String suffix = "Service.java";
 
+    private String specifiedFileName;
+
     private WebType webType = WebType.SPRING_MVC;
 
     private OutPutType outPutType = OutPutType.SERVICE_HTML;

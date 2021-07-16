@@ -12,6 +12,7 @@ import com.ron.easydoc.basic.template.vo.rpc.RpcApiConvertHelper;
 import com.ron.easydoc.basic.template.vo.spring.SpringConvertHelper;
 import com.ron.easydoc.basic.utils.FileUtils;
 import com.ron.easydoc.basic.utils.IOUtils;
+import com.ron.easydoc.basic.utils.StringUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.util.CollectionUtils;
 
@@ -77,10 +78,19 @@ public class GenDoc {
         String outPutPath = genConfig.getOutputPath();
         log.info("【genDoc】api文件输出路径配置 outPutPath:" + outPutPath);
 
-        final String targetPackage = genConfig.getTargetPackage();
+        String targetPackage = genConfig.getTargetPackage();
         log.info("【genDoc】指定服务接口所在 package:" + targetPackage);
 
-        final String suffix = genConfig.getSuffix();
+
+        String specifiedFileName = genConfig.getSpecifiedFileName();
+        log.info("【genDoc】指定解析文件名称 specifiedFileName:" + specifiedFileName);
+
+        String suffix ;
+        if (StringUtils.isEmpty(specifiedFileName)){
+            suffix = genConfig.getSuffix();
+        }else {
+            suffix = specifiedFileName.concat(genConfig.getSuffix());
+        }
         log.info("【genDoc】指定服务接口文件后缀 suffix:" + suffix);
 
         List<DocApiApiClass> docClassList = new ArrayList<>();
